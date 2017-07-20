@@ -1,0 +1,81 @@
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('com.agit.jdc.bootcamp.main.viewmodel.company.CompanyVM')"
+            form="@id('fx') @load(vm.companyDTO) @save(vm.companyDTO, before='buttonSaveCompany')">
+        <groupbox closable="false" mold="3d">
+            <caption label="Form Edit Company"/>  
+            <groupbox width="600px">
+                <caption label="Membuat Company" style="font-size:16pt"/>
+                <grid style="border:0">
+                    <columns>
+                        <column width="35%"></column>
+                        <column ></column>
+                    </columns>
+                    <rows>
+                        <row>
+                            <label value="ID Company"/>
+                            <textbox width="100%" readonly="true" value="@bind(fx.companyID)"/>
+                        </row>
+                        <row>
+                            <label value="Nama Company"/>
+                            <textbox width="100%" disabled="false" value="@bind(fx.companyName)" constraint="no empty : Nama Company Tidak Boleh Kosong"/>
+                        </row>
+                        <row>
+                            <label value="Business Group"/>
+                            <combobox width="100%" model="@load(vm.listBusinessGroup)" selectedItem="@bind(fx.businessGroupID)" readonly="true" placeholder="- Silahkan Pilih -">
+                                <template name="model" var="items">
+                                    <comboitem label="@load(items)" value="@load(items)"/>
+                                </template>
+                            </combobox>
+                        </row>
+                        <row>
+                            <label value="Deskripsi"/>
+                            <textbox rows="3" width="100%" disabled="false" value="@bind(fx.companyDescription)"/>
+                        </row>
+                        <row>
+                            <label value="Alamat"/>
+                            <textbox rows="3" width="100%" disabled="false" value="@bind(fx.address)"/>
+                        </row>
+                        <row>
+                            <label value="NPWP"/>
+                            <textbox width="100%" disabled="false" value="@bind(fx.npwp)"/>
+                        </row>
+                        <row>
+                            <label value="Telp"/>
+                            <textbox width="100%" disabled="false" value="@bind(fx.telp)"/>
+                        </row>
+                        <row>
+                            <label value="Platform"/>
+                            <combobox width="100%" model="@load(vm.listPlatform)" selectedItem="@bind(fx.platform)" readonly="true" placeholder="- Silahkan Pilih -" constraint="no empty : Platform Tidak Boleh Kosong">
+                                <template name="model" var="items">
+                                    <comboitem label="@load(items)" value="@load(items)"/>
+                                </template>
+                            </combobox>
+                        </row>
+                    </rows>
+                </grid>
+            </groupbox>
+      
+            <separator height="10px"/>
+            <groupbox width="600px" contentStyle="border:1;">
+                <grid style="border:0">
+                    <columns>
+                        <column width="50%"></column>
+                        <column width="25%" align="right"></column>
+                        <column width="25%" align="right"></column>
+                    </columns>
+                    <rows>
+                        <row>
+                            <label></label>
+                            <button label="Back" mold="trendy" width="100px" onClick="@command('buttonCancel')"/>
+                            <button label="Save" mold="trendy" width="120px" onClick="@command('buttonSaveCompany')"/>
+                        </row>
+                    </rows>
+                </grid>
+                
+            </groupbox>
+
+        </groupbox>
+        <separator height="30px"/>
+    </window>
+</zk>

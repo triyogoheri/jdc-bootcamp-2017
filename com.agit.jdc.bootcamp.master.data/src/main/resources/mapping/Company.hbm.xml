@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-access="field">
+    <class mutable="true" name="com.agit.jdc.bootcamp.master.data.domain.company.Company" table="JDC_COMPANY">
+        <!--<cache usage="read-only"/>-->
+        <id column="sk_company" name="id">
+            <!--<generator class="sequence"/>-->
+            <generator class="increment"/>
+        </id>
+        <property column="companyID" name="companyID" not-null="true" unique="true" update="false"/>
+        <property column="businessGroupID" name="businessGroupID" update="true"/>
+        <property column="companyName" name="companyName" update="true"/>
+        <property column="companyDescription" name="companyDescription" update="true"/>
+        <property column="address" name="address" update="true"/>
+        <property column="npwp" name="npwp" update="true"/>
+        <property column="telp" name="telp" update="true"/>
+        <property column="platform" name="platform" not-null="false">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.agit.jdc.bootcamp.shared.type.PlatformType</param>
+                <param name="type">12</param>
+            </type>
+        </property>
+        <property column="CREATE_DATE" name="createdDate" />
+        <property column="CREATE_BY" name="createdBy" />
+        <property column="UPDATE_DATE" name="updatedDate" update="true"/>
+        <property column="UPDATE_BY" name="updatedBy" update="true"/>
+    </class>
+</hibernate-mapping>

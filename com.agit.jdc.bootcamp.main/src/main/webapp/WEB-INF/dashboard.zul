@@ -1,0 +1,28 @@
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window border="none" style="background-color:blue"
+            apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('com.agit.jdc.bootcamp.main.viewmodel.DashboardVM')">
+        <groupbox mold="3d" style="background-color:#FFFAF0">
+            <separator spacing="20px"/>
+            <vbox width="100%" height="100%" align="left">
+                <label style="color:blue;font-size:20px" value="@load(vm.concatUsername('Welcome,  ',vm.user.userSpecificationDTO.fullName))"/>
+            </vbox>
+            <style>
+                .z-separator-hor-bar {
+                background: #eeeeee;	
+                height: 5px;		
+                }
+            </style>
+            <separator spacing="20px" bar="false"/>
+            <separator spacing="10px" />
+            <vbox width="100%" height="100%" align="left">
+                <label style="color:gray;font-size:15px" value="@load(vm.concatUsername('You are registered in AGIT JDC Framework as ', vm.user.userName))"/>
+            </vbox>
+            <separator spacing="15px"/>
+            <vbox width="100%" height="100%" align="left">
+                <label style="color:gray;font-size:15px" value="@load(vm.concatUsername('Your last sign in activity was on : ', vm.user.userSpecificationDTO.userLoginInfoDTO.loginDate))"/>
+            </vbox>
+        </groupbox>
+    </window>
+</zk>
+

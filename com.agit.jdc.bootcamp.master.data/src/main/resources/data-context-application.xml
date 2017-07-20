@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+        
+    <!--ASSEMBLER-->
+    <!--Company-->
+    <bean id="companyDTOAssembler" class="com.agit.jdc.bootcamp.master.data.interfaces.web.facade.dto.assembler.CompanyDTOAssembler"/>
+    
+    <!-- APPLICATION SERVICE -->
+    <!--Company-->
+    <bean id="companyService" class="com.agit.jdc.bootcamp.master.data.application.impl.CompanyServiceImpl">
+        <property name="companyRepository" ref="companyRepository"/>
+        <property name="companyDTOAssembler" ref="companyDTOAssembler"/>
+    </bean>
+</beans>

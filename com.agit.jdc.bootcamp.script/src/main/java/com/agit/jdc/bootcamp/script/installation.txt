@@ -1,0 +1,30 @@
+INSTALLATION
+=============
+Maven Project
+1. Copy m2 repository
+
+Maven Project
+1. Copy maven project
+2. Import maven project
+3. Clean build maven project
+
+Database
+Case in Oracle
+1. Install database
+2. Save username/password sys/password
+3. Create table namespace
+4. Create schema
+5. Create user database ..\jdc-project\project-script\src\main\java\jdc\project\script\DB\create_user.sql
+Case in PostgreSQL
+1. Install database
+2. Save username/password postgres/password
+3. Create schema
+
+Optimize Connection Pool Oracle
+Step 1 : Buka command prompt
+Step 2 : masuk sqlplus, login user sys
+Step 3 : Cek processes value : select * from v$resource_limit where resource_name = 'processes';
+Step 4 : Alter processes
+ALTER SYSTEM SET PROCESSES=500 SCOPE=SPFILE;
+ALTER SYSTEM SET OPEN_CURSORS=500;
+Step 5 : Restart your service oracle

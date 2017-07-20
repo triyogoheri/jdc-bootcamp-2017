@@ -1,0 +1,213 @@
+@font-face {
+    font-family: 'DINMedium';
+    src: url('../fonts/FF_DIN_Medium.eot');
+    src: url('../fonts/FF_DIN_Medium.eot?#iefix')
+        format('embedded-opentype'),
+        url('../fonts/FF_DIN_Medium.woff') format('woff'),
+        url('../fonts/FF_DIN_Medium.ttf') format('truetype'),
+        url('../fonts/FF_DIN_Medium.svg#DINMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	font-family: 'DINMedium', arial, tahoma, sans-serif;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #FCFCFC;
+	vertical-align: baseline;
+	
+}
+
+.title-container {
+	padding: 10px;
+	height: 85px;
+	background-image: url("../images/fifgroup_banner_top.jpg");
+}
+
+.login-container {
+	background-image: url("../images/fifgroup_bg1.png");
+}
+
+.title {
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	font-size: 1.7em;
+	height: 50px;
+	color: #fff;
+}
+
+.title-menu {
+	display: block;
+	float: right;
+	padding-top: 5px;
+	text-align: right;
+	color: #fff;
+}
+
+.z-tabs-cnt li {
+	margin-right: 2px;
+}
+
+.form-label {
+	font-weight: normal;
+}
+
+.button-box {
+	padding: 5px;
+}
+
+.title-menu a:hover {
+	text-decoration: underline;
+}
+
+.form-entry {
+	font-weight: bold;
+}
+
+.button-box {
+	padding: 5px;
+}
+
+.footer {
+	background-image: url("../images/fifgroup_banner_bottom.jpg");
+	color: #fff;
+	padding-top: 10px;
+	padding-left: 10px;
+	text-align: right;
+}
+
+tr.z-row-over>td.z-row-inner {
+	background-color: white;
+}
+
+tr.z-row-over.z-grid-odd>td.z-row-inner,tr.z-row-over>.z-cell {
+	border: 1px solid #F0FAFF;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid transparent;
+	background-color: #F0FAFF;
+}
+
+tr.z-row-over>td.z-row-inner,tr.z-row-over>.z-cell {
+	border: 1px solid white;
+	background-color: white;
+}
+
+tr.z-row-over>td.z-row-inner>.z-row-cnt {
+	border: none;
+	background-color: white;
+	color: #00547A;
+}
+
+tr.z-row-over.z-grid-odd>td.z-row-inner>.z-row-cnt {
+	border: none;
+	background-color: #F0FAFF;
+	color: #00547A;
+}
+
+.container-message {
+	font-size:14px;
+	font-weight: normal;
+	/* color: #00547A; */	
+}
+
+.label-image {
+	color: red;	
+}
+
+.z-textbox-disd,   .z-decimalbox-disd,   .z-intbox-disd,   .z-longbox-disd,   .z-doublebox-disd,  .z-datebox-disd, .z-bandbox-disd,
+.z-textbox-disd *, .z-decimalbox-disd *, .z-intbox-disd *, .z-longbox-disd *, .z-doublebox-disd *, .z-datebox-disd *, .z-bandbox-disd *, 
+tr.z-listitem-disd *, td.z-listcell-disd *{
+	color: black !important;
+	background-color: white;
+	font-weight: bold;
+}
+
+/*Perbaikan tampilan untuk FIFCORE*/
+
+.form-entry .z-grid-odd>.z-row-inner, .z-grid-odd>.z-cell {
+    /*background: #f0faff;*/
+    background: transparent;
+}                    
+.form-entry .z-row:hover>.z-row-inner, .z-row:hover>.z-cell {
+    background: transparent;
+}
+
+.form-entry .z-grid-odd:hover>.z-row-inner, .z-grid-odd>.z-cell {
+    /*background: #f0faff;*/
+    background: transparent;
+}
+.form-entry .z-row:hover>.z-row-inner>.z-row-content {color: #00547a}
+
+.form-entry .z-column-content, .z-row-content, .z-group-content, .z-groupfoot-content, .z-footer-content {
+    color: #00547a;
+}
+
+.z-treerow:nth-child(even) {background: #f0faff}
+
+.z-listheader-content, .z-listcell-content, .z-listgroup-content, .z-listgroupfoot-content, .z-listfooter-content {
+    padding: 1px;
+}
+.z-column-content, .z-row-content, .z-group-content, .z-groupfoot-content, .z-footer-content {
+    padding: 0px 5px 0px 5px;
+    line-height: 20px;
+}
+.z-textbox, .z-decimalbox, .z-intbox, .z-longbox, .z-doublebox, .z-datebox-input {
+    min-height: 21px;
+    padding: 1px 5px 1px;
+    border-color: #8fb9d0;
+}
+
+.z-combobox-button, .z-bandbox-button, .z-datebox-button, .z-timebox-button, .z-spinner-button, .z-doublespinner-button, .z-colorbox {
+    min-width: 21px;
+    height: 21px;
+    min-height:21px;
+    padding-left: 5px;
+    padding-top: 2px;
+}
+
+.z-combobox-input, .z-bandbox-input, .z-datebox-input, .z-timebox-input, .z-spinner-input, .z-doublespinner-input {
+    height: 21px;
+    min-height:21px;
+}
+
+.z-select, .z-selectbox {
+    min-height: 21px;
+}
+
+.z-colorbox-button {
+    height: 7px;
+    bottom: 7px;
+}
+
+.z-grid-body .z-cell {
+    line-height:21px;
+    padding: 1px 5px 1px;
+}
+
+.z-label, .z-radio-content, .z-checkbox-content, .z-loading {
+    color: #00547a;
+}
+.z-labelx {
+	color: white;
+}
+.z-groupbox {
+    padding-top: 10px;
+}
+.z-groupbox>.z-groupbox-header {
+    height: 5px;
+}    
+
+.z-tab-text {
+    padding: 0px 12px 0px;
+    line-height: 20px;
+}    
+
+.z-tabpanel {
+    padding: 0px 1px;
+}

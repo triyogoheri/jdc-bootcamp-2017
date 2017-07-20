@@ -1,0 +1,50 @@
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('com.agit.jdc.bootcamp.usermanagement.interfaces.web.ui.viewmodel.MenuVM')"
+            form="@id('fx') @load(vm.privilegeDTO) @save(vm.privilegeDTO, before='buttonSavePrivilege')">
+        <groupbox>
+            <textbox width="120px" value="@bind(vm.privilegeID)" placeholder="ID"/>
+            <space width="10px"></space>
+            <textbox width="220px" value="@bind(vm.privilegeName)" placeholder="Name"/>
+            <space width="10px"></space>
+            <button label="Find" image="/styles/images/btn_search.png" mold="trendy" onClick="@command('buttonSearch')"/>
+            <space width="10px"></space>
+            <button label="Create Menu" image="/styles/images/btn_add.png" mold="trendy" onClick="@command('buttonNewPrivilege')"/>
+        </groupbox>
+        <groupbox closable="false">
+            <!--<paging forward="onPaging" />-->
+            <listbox rows="10" mold="paging" emptyMessage="${labels.common.noDataFound}" model="@bind(vm.privilegeDTOs)">
+                <listhead>
+                    <listheader label="ID Privilege" width="15%" align="center"/>
+                    <listheader label="ID Parent" width="15%" align="center"/>
+                    <listheader label="Nama Privilege" width="25%" align="center"/>
+                    <listheader label="Nama Menu" width="25%" align="center"/>
+                    <listheader label="Status" width="10%" align="center"/>
+                    <listheader label="Aksi" width="10%" align="center"/>
+                </listhead>
+                <template name="model">
+                    <listitem value="${each}">
+                        <listcell >
+                            <label width="100%" value="@bind(each.privilegeID)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.parentID)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.privilegeName)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.menuName)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.privilegeStatus)"/>
+                        </listcell>
+                        <listcell>
+                            <a label="Detail" style="text-decoration:underline ;color:blue" onClick="@command('detailPrivilege', object=each)"></a>
+                        </listcell>
+                    </listitem>
+                </template>
+            </listbox>
+        </groupbox>
+    </window>
+</zk>

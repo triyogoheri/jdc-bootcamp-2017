@@ -1,0 +1,88 @@
+<?page id="index" title="JDC-Framework"?>
+<?link rel="icon" type="image/png" href="/images/agit-logo.png"?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+    <window border="none"
+            apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('com.agit.jdc.bootcamp.main.viewmodel.WorkspaceVM')"
+            height="100%" width="100%">
+        <!-- Right Click Tab -->
+        <menupopup id="popupClose">
+            <menuitem label="Close" onClick="@command('menuRightTab', popupRight=1)"/>
+            <menuitem label="Close All" onClick="@command('menuRightTab', popupRight=2)"/>
+            <menuitem label="Close Other" onClick="@command('menuRightTab', popupRight=3)"/>
+        </menupopup>
+        <!-- Header -->
+        <borderlayout >
+            <north height="40px" border="none">
+                <borderlayout>
+                    <west border="none" size="20%">
+                        <image src="@bind(vm.uriPhoto)" />
+                    </west>
+                    <east border="none">
+                        <vbox align="right">
+                            <cell>
+                                <label value="Logged in as "/>
+                                <label value="@load(vm.user.userSpecificationDTO.fullName) " style="font-weight:bold" />
+                                <label value=" | "/>
+                                <a href="/processLogout" style="color:blue;font-size:20px" onClick="@command('buttonLogout')" >
+                                    <label value="Logout"/>
+                                </a>
+                            </cell>
+                            <label value="@load(vm.user.roleDTO.roleName)" style="font-weight:bold; font-size:12px" />
+                        </vbox>
+                        <!--                        <div >
+                            <label value="Logged in as"/>
+                            <label value="@load(vm.concat(vm.user.userSpecificationDTO.fullName, vm.concat(' - ',vm.user.roleDTO.roleName)))" style="font-weight:bold" />
+                            <a href="/processLogout" style="color:blue;font-size:20px" onClick="@command('buttonLogout')" >
+                                <label value="Logout"/>
+                            </a>
+                        </div>-->
+                    </east>
+                </borderlayout>
+            </north>
+
+            <!-- Menu -->
+            <west  splittable="true" width="20%" collapsible="true" border="none"
+                   title="${labels.workspace.label.menu}" flex="true" autoscroll="true">
+                <tree model="@load(vm.model)">
+                    <template name="model" >
+                        <treeitem label="@load(each.menuName)" open="@load(false)" onClick="@command('menuClick', obj=each)" visible="${sec:isAllGranted(each.privilegeID)}" />
+                    </template>
+                </tree>
+            </west>
+
+            <!-- Main -->
+            <center border="none" autoscroll="true">
+                <tabbox id="tabbox" height="100%">
+                    <tabs id="tabs">
+                        <tab label="Dashboard" iconSclass="icon icon-home" />
+                    </tabs>
+                    <tabpanels id="tabPanels">
+                        <tabpanel style="overflow: auto">
+                            <include src="@load(vm.sourceDashboard)" />
+                        </tabpanel>
+                    </tabpanels>
+                </tabbox>
+            </center>
+
+            <!-- Footer -->
+            <south border="none" size="25px" >
+                <borderlayout>
+                    <west border="none" style="padding: 5px 5px 0px 0px;">
+                        <div align="left">
+                            <label style="color:blue;font-size:15px">Framework</label>
+                        </div>
+                        
+                    </west>
+                    <east border="none" style="padding: 5px 5px 0px 0px;">
+                        <div align="left">
+                            <label style="color:blue;font-size:15px" value="@load(vm.concatDate('Date: ',vm.user.userSpecificationDTO.userLoginInfoDTO.loginDate))" />
+                        </div>
+                    </east>
+                </borderlayout>
+            </south>
+        </borderlayout>
+    </window>
+</zk>

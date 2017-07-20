@@ -1,0 +1,45 @@
+/com.agit.jdc.shared/target/
+/com.agit.jdc.util/target/
+/com.agit.jdc.infrastructure/com.agit.jdc.infrastructure.hibernate/target/
+/com.agit.jdc.infrastructure/com.agit.jdc.infrastructure.component/target/
+/com.agit.jdc.infrastructure/com.agit.jdc.infrastructure.report/target/
+/com.agit.jdc.usermanagement/target/
+/com.agit.jdc.common/target/
+/com.agit.jdc.core/target/
+/com.agit.jdc.main/target/
+/com.agit.jdc.usermanagement - Copy/target/
+/com.agit.jdc.cms/target/
+/zk-angular-demo-master/target/
+/com.agit.jdc.main.client/target/
+/com.agit.jdc.master.data/target/
+/com.agit.jdc.contentmanagement/target/
+/com.agit.jdc.core - Copy/target/
+/com.agit.jdc.notification/target/
+/com.agit.jdc.infrastructure/com.agit.jdc.infrastructure.component - Copy/target/
+/com.agit.jdc.infrastructure/com.agit.jdc.infrastructure.notification/target/
+/com.agit.jdc.property/target/
+/com.api.acm.ticket.bulog.bitozen/target/
+/com.api.bpm.ticket.bulog.bitozen/target/
+/com.bpm.ticket.bulog.bitozen/target/
+/com.event.ticket.bulog.bitozen/target/
+/com.script.ticket.bulog.bitozen/target/
+/com.agit.jdc.acm.api/target/
+/com.agit.jdc.bpm.api/target/
+/com.agit.jdc.bpm/target/
+/com.agit.jdc.event/target/
+/com.agit.jdc.script/target/
+/com.agit.jdc.bootcamp.common/target/
+/com.agit.jdc.bootcamp.core/target/
+/com.agit.jdc.bootcamp.infrastructure/com.agit.jdc.infrastructure.component/target/
+/com.agit.jdc.bootcamp.infrastructure/com.agit.jdc.infrastructure.hibernate/target/
+/com.agit.jdc.bootcamp.infrastructure/com.agit.jdc.infrastructure.notification/target/
+/com.agit.jdc.bootcamp.main/target/
+/com.agit.jdc.bootcamp.master.data/target/
+/com.agit.jdc.bootcamp.script/target/
+/com.agit.jdc.bootcamp.shared/target/
+/com.agit.jdc.bootcamp.usermanagement/target/
+/com.agit.jdc.bootcamp.util/target/
+/com.agit.jdc.bootcamp.infrastructure/com.agit.jdc.bootcamp.infrastructure.hibernate/target/
+/com.agit.jdc.bootcamp.infrastructure/com.agit.jdc.bootcamp.infrastructure.notification/target/
+/com.agit.jdc.bootcamp.infrastructure/com.agit.jdc.bootcamp.infrastructure.report/target/
+/com.agit.jdc.bootcamp.infrastructure/com.agit.jdc.bootcamp.infrastructure.component/target/
